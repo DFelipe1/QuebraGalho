@@ -1,30 +1,92 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<h1 align="center">
+    Quebra-Galho
+</h1>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<div align="center">
 
-## Expanding the ESLint configuration
+  <a href="">
+    <img src="https://img.shields.io/github/languages/count/DFelipe1/EventPlataform.svg?color=00B37E" alt="languages" >
+  </a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  <a href="">
+    <img src="https://img.shields.io/github/languages/top/DFelipe1/EventPlataform.svg?color=00B37E" alt="languagesTop" >
+  </a>
 
-- Configure the top-level `parserOptions` property like this:
+  <a href="">
+    <img src="https://img.shields.io/github/repo-size/DFelipe1/EventPlataform.svg?color=00B37E" alt="repo-size" >
+  </a>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/DFelipe1/EventPlataform.svg?color=00B37E" alt="last-commit" >
+  </a>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+</div>
+
+<p align="center"> Aplicativo mediador entre trabalhadores e clientes </p>
+
+<p align="center">
+ <a href="#about">Sobre</a> •
+ <a href="#technologies">Tercnologias</a> •
+ <a href="#tasks">Tarefas</a> •
+ <a href="#author">Author</a> •
+ <a href="#license">License</a>
+</p>
+
+<h1 align="center">
+    <img width="600" style="border-radius: 10px" height="auto" alt="Home" title="capa do projeto" src="./src/assets/logos/imagotipo.png" />
+</h1>
+
+<h4 align="center">
+	 📝 Quebra-galho ⏰📈 Loading...  📝
+</h4>
+
+<h2 id="about" > 🎯 Sobre </h2>
+
+Somos uma plataforma que liga usuários precisando de serviços a um profissional qualificado.
+
+<h2 id="technologies"> 🛠 Technologies </h2>
+
+O que esta sendo usado para a construção do projeto:
+
+- [ReactJS](https://reactjs.org)
+- [Npm](https://www.npmjs.com)
+- [VSCode](https://code.visualstudio.com)
+- [Git Bash](https://gitforwindows.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+
+<h2 id="tasks"> 📌 Tarefas </h2>
+
+- [ ] Login
+- [ ] Register
+- [ ] header
+  - [ ] topbar
+  - [ ] sidebar  
+- [ ] router
+- [ ] Home
+  - [ ] Feed
+    - [ ] post
+  - [ ] sugestered
+- [ ] notification
+- [ ] messages
+- [ ] user
+- [ ] workers
+- [ ] my services
+
+
+
+
+
+<h2 id="author"> 💻 Author </h2>
+
+<img style="border-radius: 50%;" src="https://github.com/DFelipe1.png" width="100px;" alt="Rodrigo Santos"/>
+
+By David Felipe 👋🏽 Find me:
+
+
+[![Linkedin Badge](https://img.shields.io/badge/-DavidFelipe-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lipedev/)](https://www.linkedin.com/in/lipedev/)
+
+[![Gmail Badge](https://img.shields.io/badge/-davidf.30.10@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:davidf.30.10@gmail.com)](mailto:davidf.30.10@gmail.com)
+
+
