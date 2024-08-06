@@ -58,7 +58,9 @@ O que esta sendo usado para a construção do projeto:
 
 <h2 id="tasks"> 📌 Tarefas </h2>
 
-- [ ] Login
+- [x] Login
+  - [x] Button
+  - [x] Input
 - [ ] Register
 - [ ] header
   - [ ] topbar
