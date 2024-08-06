@@ -6,12 +6,12 @@ interface ButtonProps extends ComponentProps<'button'>, VariantProps<typeof butt
 }
 
 const buttonVariants = tv({
-    base: 'w-fit px-4 bg-secondary-400 text-slate-900 text-base font-bold rounded-lg',
+    base: 'w-fit px-4 bg-secondary-400 text-slate-900 text-base font-bold rounded-lg flex gap-3 items-center justify-center  hover:brightness-110',
 
     variants: {
         variant: {
-            primary: 'bg-secondary-400 text-slate-900  hover:bg-secondary-300',
-            secondary: 'bg-zinc-800 text-zinc-200 hover:bg-zinc-700',
+            primary: 'bg-secondary-400 text-slate-900',
+            secondary: 'bg-primary text-slate-100',
         },
 
         size: {

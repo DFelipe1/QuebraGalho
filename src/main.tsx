@@ -7,6 +7,7 @@ import {
 import './index.css'
 import { Home } from './Views/home';
 import { Login } from './Views/login';
+import { Register } from './Views/register';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <div className='w-full max-w-[1216px] mx-auto'><Login/></div>,
+  },
+  {
+    path: "/register",
+    element: <div className='w-full max-w-[1216px] mx-auto'><Register/></div>,
   },
 ]);
 
