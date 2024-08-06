@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import imagotipo from "../assets/logos/imagotipo.png";
-import amico from "../assets/images/amico.png";
-import { Button } from "../components/button";
-import { Input } from "../components/inputs";
+import imagotipo from "../../assets/logos/imagotipo.png";
+import amico from "../../assets/images/amico.png";
+import { Button } from "../../components/button";
+import { Input } from "../../components/inputs";
 
 export function Login() {
 
