@@ -58,15 +58,18 @@ O que esta sendo usado para a construção do projeto:
 
 <h2 id="tasks"> 📌 Tarefas </h2>
 
+- [x] router
 - [x] Login
   - [x] Button
   - [x] Input
-- [ ] Register
-- [ ] header
-  - [ ] topbar
-  - [ ] sidebar  
-- [ ] router
+- [x] Register
+  - [x] Steps
+  - [ ] validation (React hook form | zod)
 - [ ] Home
+  - [ ] cookie token
+  - [ ] header
+    - [ ] topbar
+    - [ ] sidebar  
   - [ ] Feed
     - [ ] post
   - [ ] sugestered
