@@ -1,0 +1,1 @@
+type Steps = 'infoRegisterUser' | 'typeUser' | 'SearchService' | 'FormService'
