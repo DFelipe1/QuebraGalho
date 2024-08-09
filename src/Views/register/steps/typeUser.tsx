@@ -2,17 +2,21 @@ import pana from "../../../assets/images/pana.png";
 import bro from "../../../assets/images/bro.png";
 import { Button } from "../../../components/button";
 
-export function TypeUser() {
+interface TypeUserProps {
+    setStep: (step: Steps) => void 
+  }
+
+export function TypeUser({setStep}: TypeUserProps) {
     return (
         <>
              <div className="w-full max-w-[600px] space-y-5">
                 <h1 className='w-full text-5xl text-center font-extrabold leading-none text-slate-950'>Como entrar na plataforma?</h1>
                 <span className=" w-full block text-xl text-center font-extrabold leading-snug text-slate-800">Escolha um tipo de categoria</span>
                 <div className="flex gap-3 justify-between items-center">
-                    <Button size="full">
+                    <Button size="full" onClick={() => setStep('SearchService')}>
                         <span>Encontrar profissional</span>
                     </Button>
-                    <Button size="full" variant="secondary">
+                    <Button size="full" variant="secondary" onClick={() => setStep('FormService')}>
                         <span>Prestar serviço</span>
                     </Button>
                 </div>

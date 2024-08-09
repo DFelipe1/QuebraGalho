@@ -2,7 +2,12 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import bro from "../../../assets/images/bro.png";
 import { Button } from "../../../components/button";
 
-export function SearchService() {
+interface SearchServiceProps {
+    setStep: (step: Steps) => void 
+  }
+  
+
+export function SearchService({setStep}: SearchServiceProps) {
     return (
         <>
              <div className="w-full max-w-[650px] space-y-6">
@@ -15,7 +20,7 @@ export function SearchService() {
                 <Button size="full">
                     <span>Entrar na plataforma</span>
                 </Button>
-                <Button size="full" variant="secondary">
+                <Button size="full" variant="secondary" onClick={() => setStep('typeUser')}>
                     <span>Voltar</span>
                     <ArrowRight size={20}/>
                 </Button>

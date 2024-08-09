@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 
 import rafiki from "../../../assets/images/rafiki.png";
 
-export function InfoRegisterUser() {
+
+interface InfoRegisterUserProps {
+  setStep: (step: Steps) => void 
+}
+
+export function InfoRegisterUser({setStep}: InfoRegisterUserProps) {
     return (
         <div className="w-full flex justify-between items-center">
             <div className="flex-1 w-full space-y-3">
@@ -34,7 +39,7 @@ export function InfoRegisterUser() {
                 <Input label="Confirme a senha:" name="email" placeholder="Digite a mesma senha novamente"/>
                 
                 <div className="w-full">
-                  <Button size="full"> 
+                  <Button size="full" onClick={() => setStep("typeUser")}> 
                     Proseguir cadastro 
                     <ArrowRight size={20}/> 
                 </Button>

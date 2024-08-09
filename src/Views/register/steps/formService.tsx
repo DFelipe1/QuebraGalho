@@ -3,7 +3,11 @@ import pana from "../../../assets/images/pana.png";
 import { Button } from "../../../components/button";
 import { Input } from "../../../components/inputs";
 
-export function FormService() {
+interface FormServiceProps {
+    setStep: (step: Steps) => void 
+}
+
+export function FormService({ setStep }: FormServiceProps) {
     return (
         <>
              <div className="w-full max-w-[650px] space-y-6">
