@@ -4,12 +4,14 @@ import { Button } from "../../components/button";
 import { InfoRegisterUser } from "./steps/InfoRegisterUser";
 import { TypeUser } from "./steps/typeUser";
 import { useState } from "react";
+import { SearchService } from "./steps/searchService";
+import { FormService } from "./steps/formService";
 
 
 
 export function Register() {
 
-    const [step, setStep] = useState<'infoRegisterUser' | 'typeUser'>('infoRegisterUser')
+    const [step, setStep] = useState<'infoRegisterUser' | 'typeUser' | 'SearchService' | 'FormService' >('FormService')
 
     return (
       <>
@@ -24,6 +26,8 @@ export function Register() {
         <main className="w-full h-[89vh] flex justify-center items-center">
             {step === "infoRegisterUser" &&  <InfoRegisterUser/>}
             {step === "typeUser" &&  <TypeUser/>}
+            {step === "SearchService" &&  <SearchService/>}
+            {step === "FormService" &&  <FormService/>}
         </main>
       </>
     )
