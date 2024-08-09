@@ -20,7 +20,8 @@ export default {
           DEFAULT: '#903333',
           light: '#C65353'
         }
-      }
+      },
+
     },
     fontFamily: {
       sans: ['Lato', 'sans-serif'],
