@@ -2,15 +2,27 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import pana from "../../../assets/images/pana.png";
 import { Button } from "../../../components/button";
 import { Input } from "../../../components/inputs";
+import { ArrowLeft } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 interface FormServiceProps {
     setStep: (step: Steps) => void 
 }
 
 export function FormService({ setStep }: FormServiceProps) {
+
+    const navigate = useNavigate()
+
+    function handleCreateUserService() {
+        navigate('/')
+    }
     return (
         <>
              <div className="w-full max-w-[650px] space-y-6">
+                <button className="text-slate-500 hover:text-slate-400 text-sm font-semibold leading-snug flex gap-3 items-center" onClick={() => setStep("typeUser")}>
+                    <ArrowLeft size={20}/>
+                    <span>Voltar</span>
+                </button>
                 <h1 className='w-full text-5xl text-center font-extrabold leading-none text-slate-950'>
                     Ofereça Seus Serviços
                 </h1>
@@ -23,8 +35,8 @@ export function FormService({ setStep }: FormServiceProps) {
                     <Input label="Faça uma breve descrição sobre você:" name="about" placeholder="Descreva aqui seu trabalho e experiências"/>
                     
                     <div className="w-full">
-                    <Button size="full"> 
-                        Proseguir cadastro 
+                    <Button size="full" onClick={handleCreateUserService}> 
+                        Concluir
                         <ArrowRight size={20}/> 
                     </Button>
                     </div>

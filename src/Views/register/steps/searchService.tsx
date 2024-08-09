@@ -1,6 +1,7 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import bro from "../../../assets/images/bro.png";
 import { Button } from "../../../components/button";
+import { useNavigate } from "react-router-dom";
 
 interface SearchServiceProps {
     setStep: (step: Steps) => void 
@@ -8,6 +9,13 @@ interface SearchServiceProps {
   
 
 export function SearchService({setStep}: SearchServiceProps) {
+
+    const navigate = useNavigate()
+
+    function handleCreateUser() {
+        navigate('/')
+    }
+
     return (
         <>
              <div className="w-full max-w-[650px] space-y-6">
@@ -17,7 +25,7 @@ export function SearchService({setStep}: SearchServiceProps) {
                 <span className=" w-full block text-xl text-center font-extrabold leading-snug text-slate-800">
                     Conecte-se com os melhores prestadores de serviço na sua região.
                 </span>
-                <Button size="full">
+                <Button size="full" onClick={handleCreateUser}>
                     <span>Entrar na plataforma</span>
                 </Button>
                 <Button size="full" variant="secondary" onClick={() => setStep('typeUser')}>

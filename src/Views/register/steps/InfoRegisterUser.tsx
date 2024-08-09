@@ -15,7 +15,7 @@ export function InfoRegisterUser({setStep}: InfoRegisterUserProps) {
         <div className="w-full flex justify-between items-center">
             <div className="flex-1 w-full space-y-3">
                 <Link 
-                    to='/'
+                    to='/login'
                     className="text-sm font-semibold leading-snug text-secondary-500 flex gap-3 items-center"
                 >
                     <ArrowLeft size={20}/>
