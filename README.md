@@ -67,9 +67,9 @@ O que esta sendo usado para a construção do projeto:
   - [ ] validation (React hook form | zod)
 - [ ] Home
   - [ ] cookie token
-  - [ ] header
-    - [ ] topbar
-    - [ ] sidebar  
+  - [x] header
+    - [x] topbar
+    - [x] sidebar  
   - [ ] Feed
     - [ ] post
   - [ ] sugestered

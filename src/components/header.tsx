@@ -2,13 +2,14 @@ import { Bell, Chats, GearSix, Handshake, House, MagnifyingGlass, SignOut, UserC
 import { Link } from "react-router-dom";
 
 import Icone from '../assets/logos/icone.svg';
+import { UserAvatar } from "./userAvatar";
 
 export function Header(){
 
 
     return (
         <header className="w-full relative">
-            <aside className="fixed top-0 right-0 w-[94%] h-fit py-5 px-6 bg-primary flex justify-between items-center">
+            <aside className="fixed top-0 right-0 w-[94%] h-fit py-5 px-12 bg-primary flex justify-between items-center">
                 <div className="w-full max-w-md rounded-lg overflow-hidden flex bg-slate-100">
                     <input 
                         type="text" 
@@ -33,18 +34,7 @@ export function Header(){
                         <GearSix size={20} weight="fill"/>
                     </Link>
 
-                    <div className="flex gap-2 items-center justify-center">
-                        <span className="font-bold text-base leading-snug text-slate-100">
-                            David Felipe
-                        </span>
-                        <div className="w-14 h-14 overflow-hidden rounded-full">
-                            <img 
-                                src="https://github.com/DFelipe1.png" 
-                                alt="David Felipe" 
-                                className="w-full object-cover" 
-                            />
-                        </div>
-                    </div>
+                    <UserAvatar imgAvatar="https://github.com/DFelipe1.png" name="David Felipe"/>
                 </div>
             </aside>
             <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-5 px-4 bg-primary flex flex-col justify-between items-center">

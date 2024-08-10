@@ -1,6 +1,6 @@
 export function UserRecomend() {
     return (
-        <div className="w-full flex flex-col gap-4 bg-slate-200 rounded-lg p-4">
+        <div className="w-full flex flex-col gap-4 bg-slate-50 rounded-lg p-4 shadow">
             <div className="flex gap-3 items-center">
                 <img 
                     src="http://github.com/Maykbrito.png" 
