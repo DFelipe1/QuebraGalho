@@ -20,7 +20,7 @@ export function Header(){
                     </button>
                 </div>
 
-                <div className="flex gap-6 items-center">
+                <div className="flex gap-4 items-center">
                     <Link 
                         to="/"
                         className="p-2 text-slate-100 hover:brightness-110"
