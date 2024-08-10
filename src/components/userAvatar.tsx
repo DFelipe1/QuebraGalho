@@ -9,7 +9,7 @@ export function UserAvatar({ imgAvatar, name }: UserAvatarProps) {
             <span className="font-bold text-base leading-snug text-slate-100">
                 {name}
             </span>
-            <div className="w-14 h-14 overflow-hidden rounded-full">
+            <div className="w-12 h-w-12 overflow-hidden rounded-full">
                 <img 
                     src={imgAvatar}
                     alt={name} 

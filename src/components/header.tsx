@@ -9,13 +9,13 @@ export function Header(){
 
     return (
         <header className="w-full relative">
-            <aside className="fixed top-0 right-0 w-[94%] h-fit py-5 px-12 bg-primary flex justify-between items-center">
+            <aside className="fixed top-0 right-0 w-[95%] h-fit py-4 px-12 bg-primary flex justify-between items-center">
                 <div className="w-full max-w-md rounded-lg overflow-hidden flex bg-slate-100">
                     <input 
                         type="text" 
                         className="w-full bg-transparent px-4 py-2 outline-none"
                     />
-                    <button className="w-fit px-4 py-2 bg-secondary-400 hover:brightness-110">
+                    <button className="w-fit px-4 py-2 bg-secondary-300 hover:brightness-110">
                         <MagnifyingGlass size={20}/>
                     </button>
                 </div>
@@ -37,7 +37,7 @@ export function Header(){
                     <UserAvatar imgAvatar="https://github.com/DFelipe1.png" name="David Felipe"/>
                 </div>
             </aside>
-            <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-5 px-4 bg-primary flex flex-col justify-between items-center">
+            <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-4 px-2 bg-primary flex flex-col justify-between items-center">
                 <div className="w-14">
                     <img src={Icone} alt="" className="w-full object-cover" />
                 </div>
