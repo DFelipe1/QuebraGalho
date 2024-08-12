@@ -29,7 +29,6 @@
 <p align="center">
  <a href="#about">Sobre</a> •
  <a href="#technologies">Tercnologias</a> •
- <a href="#tasks">Tarefas</a> •
  <a href="#author">Author</a> •
  <a href="#license">License</a>
 </p>
@@ -55,32 +54,6 @@ O que esta sendo usado para a construção do projeto:
 - [VSCode](https://code.visualstudio.com)
 - [Git Bash](https://gitforwindows.org/)
 - [Tailwindcss](https://tailwindcss.com/)
-
-<h2 id="tasks"> 📌 Tarefas </h2>
-
-- [x] router
-- [x] Login
-  - [x] Button
-  - [x] Input
-- [x] Register
-  - [x] Steps
-  - [ ] validation (React hook form | zod)
-- [ ] Home
-  - [ ] cookie token
-  - [x] header
-    - [x] topbar
-    - [x] sidebar  
-  - [ ] Feed
-    - [ ] post
-  - [ ] sugestered
-- [ ] notification
-- [ ] messages
-- [ ] user
-- [ ] workers
-- [ ] my services
-
-
-
 
 
 <h2 id="author"> 💻 Author </h2>
