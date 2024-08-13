@@ -1,6 +1,6 @@
 import { CalendarBlank, GlobeSimple } from "@phosphor-icons/react";
 
-export function Post() {
+export function PostFeed() {
     return (
         <button className="w-full px-3 py-4 bg-slate-50 space-y-4 rounded-lg shadow">
             <div className="space-y-6 w-full">

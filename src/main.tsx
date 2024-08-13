@@ -8,11 +8,23 @@ import './index.css'
 import { Home } from './Views/home';
 import { Login } from './Views/login';
 import { Register } from './Views/register';
+import { Post } from './Views/post';
+import { Layout } from './Views/layout';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Layout/>,
+    children: [
+      {
+        path: "posts/",
+        element: <Home />,
+      },
+      {
+        path: "post/:postId",
+        element: <Post />,
+      },
+    ],
   },
   {
     path: "/login",
