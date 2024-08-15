@@ -1,10 +1,18 @@
 import { CalendarBlank, GlobeSimple } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 export function PostFeed() {
+
+    const navigate = useNavigate()
+
+    function handlePostPage() {
+        navigate('/post/1')
+    }
+
     return (
-        <button className="w-full px-3 py-4 bg-slate-50 space-y-4 rounded-lg shadow">
+        <button onClick={handlePostPage} className="w-full px-3 py-4 bg-slate-50 space-y-4 rounded-lg shadow">
             <div className="space-y-6 w-full">
-                <h1 className="text-2xl text-left text-slate-950 font-extrabold leading-none">
+                <h1 className="text-xl text-left text-slate-950 font-extrabold leading-none">
                     Procura-se: Profissional de Limpeza Residencial com Experiência
                 </h1>
                 <p className="text-base text-left font-normal text-slate-950 leading-snug line-clamp-2">
