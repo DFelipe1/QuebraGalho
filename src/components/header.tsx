@@ -46,16 +46,16 @@ export function Header(){
                     <Link to="/" className="w-fit h-fit text-slate-100 p-2 rounded-full bg-secondary-300 border border-secondary-300 hover:brightness-110">
                         <House size={28} weight="fill"/>
                     </Link>
-                    <Link to="/" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/chat" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <Chats size={28} weight="fill"/>
                     </Link>
-                    <Link to="/" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/david-felipe" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <UserCircle size={28} weight="fill"/>
                     </Link>
-                    <Link to="/" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/demands" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <Handshake size={28} weight="fill"/>
                     </Link>
-                    <Link to="/" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/services" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <Wrench size={28} weight="fill"/>
                     </Link>
                 </nav>
