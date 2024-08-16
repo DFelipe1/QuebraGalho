@@ -13,12 +13,16 @@ export default {
           500: '#E88700'
         },
         success: {
-          DEFAULT: '#2F723D',
-          light: '#4E995E'
+          DEFAULT: '#31C059',
+          light: '#54E37C'
         },
         danger: {
           DEFAULT: '#903333',
           light: '#C65353'
+        },
+        process: {
+          DEFAULT: '#2E83C0',
+          light: '#57ACE9'
         }
       },
 
