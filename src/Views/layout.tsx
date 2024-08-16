@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export function Layout() {
 
     const navigate = useNavigate()
-
+ 
     useEffect(() => {
         const currentUrl = window.location.href;
         if(currentUrl === "http://localhost:5173/"){
@@ -41,8 +41,8 @@ export function Layout() {
                         <UserRecomend/>
                         <UserRecomend/>
                     </div>
-                </div>
-            </aside>         
+                </div> 
+            </aside>        
            </main>
         </div>
     )

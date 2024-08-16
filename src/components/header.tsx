@@ -22,7 +22,7 @@ export function Header(){
 
                 <div className="flex gap-4 items-center">
                     <Link 
-                        to="/"
+                        to="/notification"
                         className="p-2 text-slate-100 hover:brightness-110"
                     >
                         <Bell size={20} weight="fill"/>
