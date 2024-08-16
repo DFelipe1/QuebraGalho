@@ -10,6 +10,7 @@ import { Login } from './Views/login';
 import { Register } from './Views/register';
 import { Post } from './Views/post';
 import { Layout } from './Views/layout';
+import { Notification } from './Views/notification';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "post/:postId",
         element: <Post />,
+      },
+      {
+        path: "notification/",
+        element: <Notification />,
       },
     ],
   },
