@@ -11,6 +11,7 @@ import { Register } from './Views/register';
 import { Post } from './Views/post';
 import { Layout } from './Views/layout';
 import { Notification } from './Views/notification';
+import { NotFoundPage } from './Views/404';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <div className='w-full max-w-[1216px] mx-auto'><Register/></div>,
+  },
+  {
+    path: "/*",
+    element: <NotFoundPage/>,
   },
 ]);
 
