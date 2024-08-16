@@ -12,6 +12,9 @@ import { Post } from './Views/post';
 import { Layout } from './Views/layout';
 import { Notification } from './Views/notification';
 import { NotFoundPage } from './Views/404';
+import { LayoutHome } from './Views/home/layout';
+import { Demands } from './Views/demands';
+import { Services } from './Views/services';
 
 const router = createBrowserRouter([
   {
@@ -19,16 +22,31 @@ const router = createBrowserRouter([
     element: <Layout/>,
     children: [
       {
-        path: "posts/",
-        element: <Home />,
-      },
-      {
-        path: "post/:postId",
-        element: <Post />,
+        path: "/",
+        element: <LayoutHome/>,
+        children: [
+          {
+            path: "posts/",
+            element: <Home />,
+          },
+          {
+            path: "post/:postId",
+            element: <Post />,
+          },
+        ],
+
       },
       {
         path: "notification/",
         element: <Notification />,
+      },
+      {
+        path: "demands/",
+        element: <Demands />,
+      },
+      {
+        path: "services/",
+        element: <Services />,
       },
     ],
   },
