@@ -15,6 +15,7 @@ import { NotFoundPage } from './Views/404';
 import { LayoutHome } from './Views/home/layout';
 import { Demands } from './Views/demands';
 import { Services } from './Views/services';
+import { Profile } from './Views/profile';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
           },
         ],
 
+      },
+      {
+        path: "profile/:userName/",
+        element: <Profile />,
       },
       {
         path: "notification/",

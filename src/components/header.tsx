@@ -49,7 +49,7 @@ export function Header(){
                     <Link to="/chat" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <Chats size={28} weight="fill"/>
                     </Link>
-                    <Link to="/david-felipe" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="profile/david-felipe" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
                         <UserCircle size={28} weight="fill"/>
                     </Link>
                     <Link to="/demands" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
