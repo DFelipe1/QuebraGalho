@@ -7,7 +7,7 @@ export function UserRelevant() {
                 <img 
                     src="http://github.com/Maykbrito.png" 
                     alt="" 
-                    className="w-14 h-w-14"
+                    className="w-14 h-14 rounded-full"
                 />
                 <div className="flex flex-col gap-1">
                     <span className="text-base text-slate-900 font-bold">Mayk Brito</span>
