@@ -4,7 +4,7 @@ export function Profile() {
     return (
         <div className="w-full max-w-4xl px-2 py-4 space-y-5">
             <div className="w-full flex justify-between items-center bg-slate-50 rounded-lg px-4 py-5 shadow">
-                <div className="flex gap-3 justify-between items-center">
+                <div className="flex gap-3 items-center">
                     <img 
                         src="http://github.com/DFelipe1.png" 
                         alt="" 
