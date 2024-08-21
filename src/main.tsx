@@ -16,6 +16,8 @@ import { LayoutHome } from './Views/home/layout';
 import { Demands } from './Views/demands';
 import { Services } from './Views/services';
 import { Profile } from './Views/profile';
+import { LayoutChat } from './Views/chats/layout';
+import { Chat } from './Views/chats';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,17 @@ const router = createBrowserRouter([
           {
             path: "post/:postId",
             element: <Post />,
+          },
+        ],
+
+      },
+      {
+        path: "chats/",
+        element: <LayoutChat/>,
+        children: [
+          {
+            path: ":idChat/",
+            element: <Chat />,
           },
         ],
 
