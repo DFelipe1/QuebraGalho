@@ -1,11 +1,20 @@
 import { Bell, Chats, GearSix, Handshake, House, MagnifyingGlass, SignOut, UserCircle, Wrench } from "@phosphor-icons/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Icone from '../assets/logos/icone.svg';
 import { UserAvatar } from "./userAvatar";
+import { Button } from "./button";
+
+
 
 export function Header(){
 
+    const currentUrl = window.location.href;
+    const navigate = useNavigate()
+
+    function logout() {
+        navigate("/login")
+    }
 
     return (
         <header className="w-full relative">
@@ -43,26 +52,26 @@ export function Header(){
                 </div>
 
                 <nav className="flex flex-col gap-7">
-                    <Link to="/" className="w-fit h-fit text-slate-100 p-2 rounded-full bg-secondary-300 border border-secondary-300 hover:brightness-110">
+                    <Link to="/" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("posts") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <House size={28} weight="fill"/>
                     </Link>
-                    <Link to="/chats" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/chats" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("chats") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <Chats size={28} weight="fill"/>
                     </Link>
-                    <Link to="profile/david-felipe" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="profile/david-felipe" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("profile") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <UserCircle size={28} weight="fill"/>
                     </Link>
-                    <Link to="/demands" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/demands" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("demands") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <Handshake size={28} weight="fill"/>
                     </Link>
-                    <Link to="/services" className="w-fit h-fit text-slate-100 p-2 hover:brightness-110">
+                    <Link to="/services" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("services") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <Wrench size={28} weight="fill"/>
                     </Link>
                 </nav>
 
-                <div className="w-fit h-fit text-slate-100 p-2 bg-slate-700 rounded-lg hover:brightness-110">
+                <Button onClick={logout} className="w-fit h-fit text-slate-100 p-2 bg-slate-700 rounded-lg hover:brightness-110">
                     <SignOut size={20}/>
-                </div>
+                </Button>
             </aside>
     </header>
     )
