@@ -8,7 +8,8 @@ export function Layout() {
  
     useEffect(() => {
         const currentUrl = window.location.href;
-        if(currentUrl === "http://localhost:5173/" || currentUrl === "https://quebra-galho-eight.vercel.app"){
+        console.log(currentUrl)
+        if(currentUrl === "http://localhost:5173/" || currentUrl === "https://quebra-galho-eight.vercel.app/"){
             navigate('/posts')
         }
     })
