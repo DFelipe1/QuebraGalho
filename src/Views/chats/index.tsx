@@ -53,10 +53,10 @@ export function Chat() {
                 <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
                     Aceita analisar esse serviço?
                 </strong>
-                <div className="flex w-full gap-4">
+                <form className="flex w-full gap-4">
                     <Button size="full">Aceitar</Button>
                     <Button variant="secondary" size="full">Recusar</Button>
-                </div>
+                </form>
             </div> */}
             <div className="w-full h-fit space-y-1">
                 <strong className="text-base text-slate-500 font-normal leading-relaxed">
@@ -68,7 +68,7 @@ export function Chat() {
                 >
                     <input 
                         type="text"
-                        className="w-full bg-transparent outline-none"
+                        className="w-full bg-transparent outline-none text-slate-200 leading-normal"
                         placeholder="Digite sua mensagem aqui"
                     />
                     <Button>
