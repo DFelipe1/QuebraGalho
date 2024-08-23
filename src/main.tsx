@@ -18,6 +18,9 @@ import { Services } from './Views/services';
 import { Profile } from './Views/profile';
 import { LayoutChat } from './Views/chats/layout';
 import { Chat } from './Views/chats';
+import { LayoutContract } from './Views/contract/layout';
+import { FormContract } from './Views/contract/formContract';
+import { Contract } from './Views/contract/contract';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +52,20 @@ const router = createBrowserRouter([
           },
         ],
 
+      },
+      {
+        path: "contract/",
+        element: <LayoutContract />,
+        children: [
+          {
+            path: "",
+            element: <FormContract />,
+          },
+          {
+            path: ":contractId",
+            element: <Contract />,
+          },
+        ],
       },
       {
         path: "profile/:userName/",
