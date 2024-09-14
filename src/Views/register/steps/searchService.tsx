@@ -19,10 +19,10 @@ export function SearchService({setStep}: SearchServiceProps) {
     return (
         <>
              <div className="w-full max-w-[650px] space-y-6">
-                <h1 className='w-full text-5xl text-center font-extrabold leading-none text-slate-950'>
+                <h1 className='w-full max-sm:text-4xl text-5xl text-center font-extrabold leading-none text-slate-950'>
                     Encontre o Profissional Ideal
                 </h1>
-                <span className=" w-full block text-xl text-center font-extrabold leading-snug text-slate-800">
+                <span className="w-full block max-sm:text-lg text-xl text-center font-extrabold leading-snug text-slate-800">
                     Conecte-se com os melhores prestadores de serviço na sua região.
                 </span>
                 <Button size="full" onClick={handleCreateUser}>
@@ -33,7 +33,7 @@ export function SearchService({setStep}: SearchServiceProps) {
                     <ArrowRight size={20}/>
                 </Button>
             </div>
-            <div className="absolute w-full h-[90vh] -z-10 overflow-hidden">
+            <div className="absolute max-sm:sr-only min-md:sr-only  not-sr-only w-full h-[90vh] -z-10 overflow-hidden">
                 <img 
                     src={bro} 
                     alt="" 
