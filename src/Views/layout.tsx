@@ -17,7 +17,7 @@ export function Layout() {
     return (
         <div className="w-full">
            <Header/>
-           <main className="w-full max-w-[1100px] mx-auto flex pt-24 gap-5">
+           <main className="w-full max-w-[1100px] mx-auto flex max-sm:px-4 pt-24 gap-5">
             <Outlet/>
                 
            </main>

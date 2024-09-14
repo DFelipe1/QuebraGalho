@@ -87,11 +87,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <div className='w-full max-w-[1216px] mx-auto'><Login/></div>,
+    element: <div className='w-full px-1 max-w-[1216px] mx-auto'><Login/></div>,
   },
   {
     path: "/register",
-    element: <div className='w-full max-w-[1216px] mx-auto'><Register/></div>,
+    element: <div className='w-full px-1 max-w-[1216px] mx-auto'><Register/></div>,
   },
   {
     path: "/*",

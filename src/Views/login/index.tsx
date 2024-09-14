@@ -9,20 +9,20 @@ export function Login() {
     return (
       <>
         <header className="w-full py-4 flex justify-between items-center">
-          <img src={imagotipo} alt="logo quebra-galho" className="max-w-[200px]"/>
-          <Link to="/register"  className="flex gap-3 items-center">
-            <span className="mr-2 text-base font-normal text-slate-800">você ainda não tem uma conta?</span>
+          <img src={imagotipo} alt="logo quebra-galho" className="max-sm:w-40 max-w-52"/>
+          <Link to="/register"  className="flex gap-3 items-center ">
+            <span className="max-sm:sr-only not-sr-only mr-2 text-base font-normal text-slate-800">você ainda não tem uma conta?</span>
             <Button> Criar conta </Button>
           </Link>
         </header>
 
         <main className="w-full h-[89vh] flex justify-center items-center">
-          <div className="w-full flex justify-between items-center">
-            <div className="flex-1 w-full">
+          <div className="w-full flex max-sm:flex-col justify-between items-center">
+            <div className="flex-1 w-full not-sr-only max-sm:sr-only">
               <img src={amico} alt="" className="w-full object-cover"/>
             </div>
 
-            <div className="w-full max-w-[600px] space-y-5">
+            <div className="w-full  sm:w-1/2 max-w-[600px] space-y-5">
               <h1 className="text-5xl font-extrabold leading-none text-slate-950">Bem-vindo </h1>
               <span className="text-xl font-extrabold leading-snug text-slate-950">Conectando Você ao Melhor Serviço, Quando Você Precisar</span>
               <form action="" className="w-full space-y-4">
