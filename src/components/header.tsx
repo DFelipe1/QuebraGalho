@@ -43,7 +43,7 @@ export function Header(){
                         <GearSix size={20} weight="fill"/>
                     </Link>
 
-                    <UserAvatar imgAvatar="https://github.com/DFelipe1.png" name="David Felipe"/>
+                    <UserAvatar imgAvatar="https://github.com/DFelipe1.png" name="David Felipe" userName="david-felipe"/>
                 </div>
             </aside>
             <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-4 px-2 bg-primary flex flex-col justify-between items-center">

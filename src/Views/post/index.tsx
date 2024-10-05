@@ -31,7 +31,7 @@ export function Post() {
                 </p>
             </main>
             <footer className="w-full flex flex-col gap-3">
-                <div className="flex gap-2">
+                <Link to="/profile/username" className="flex gap-2">
                     <div className="w-8 h-w-8 overflow-hidden rounded-full">
                         <img 
                             src="http://github.com/PedroH2o.png"
@@ -42,7 +42,7 @@ export function Post() {
                     <span className="font-bold text-base leading-snug text-slate-">
                         Pedro Yan
                     </span>
-                </div>
+                </Link>
                 <div className="space-y-4">
                     <span className="flex gap-2 text-sm text-slate-800 font-normal"><Mailbox size={18} /> F****@hotmail.com</span>
                     <span className="flex gap-2 text-sm text-slate-800 font-normal"><Phone size={18} /> 462-***-**** x4542</span>

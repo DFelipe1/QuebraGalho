@@ -12,6 +12,7 @@ const buttonVariants = tv({
         variant: {
             primary: 'bg-secondary-400 text-slate-900',
             secondary: 'bg-primary text-slate-100',
+            ghost: 'bg-transparent text-slate-900'
         },
 
         size: {

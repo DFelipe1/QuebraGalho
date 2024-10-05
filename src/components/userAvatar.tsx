@@ -1,11 +1,21 @@
-interface UserAvatarProps {
+import { useNavigate } from "react-router-dom";
+import { Button } from "./button";
+
+interface UserAvatarProps{
     imgAvatar: string;
     name: string;
+    userName: string;
 }
 
-export function UserAvatar({ imgAvatar, name }: UserAvatarProps) {
+export function UserAvatar({ imgAvatar, name, userName}: UserAvatarProps) {
+
+    const navigate = useNavigate()
+
+    function handleNavigateToUserProfile(){
+        navigate(`/profile/${userName}/`)
+    }
     return (
-        <div className="flex gap-2 items-center justify-center">
+        <Button variant="ghost" onClick={handleNavigateToUserProfile} className="flex gap-2 items-center justify-center">
             <span className="font-bold text-base leading-snug text-slate-100">
                 {name}
             </span>
@@ -16,6 +26,6 @@ export function UserAvatar({ imgAvatar, name }: UserAvatarProps) {
                     className="w-full object-cover" 
                 />
             </div>
-        </div>
+        </Button>
     )
 }
