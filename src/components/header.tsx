@@ -18,8 +18,8 @@ export function Header(){
 
     return (
         <header className="w-full relative">
-            <aside className="fixed top-0 right-0 w-[95%] h-fit py-4 px-12 bg-primary flex justify-between items-center">
-                <div className="w-full max-w-md rounded-lg overflow-hidden flex bg-slate-100">
+            <aside className="fixed top-0 right-0 w-[95%] h-fit py-4 max-sm:px-1 px-12 bg-primary flex justify-between items-center">
+                <div className="w-full max-sm:max-w-xs max-w-md rounded-lg overflow-hidden flex bg-slate-100">
                     <input 
                         type="text" 
                         className="w-full bg-transparent px-4 py-2 outline-none"
@@ -29,16 +29,16 @@ export function Header(){
                     </button>
                 </div>
 
-                <div className="flex gap-4 items-center">
+                <div className="flex max-sm:gap-1 gap-4 items-center">
                     <Link 
                         to="/notification"
-                        className="p-2 text-slate-100 hover:brightness-110"
+                        className="max-sm:sr-only not-sr-only p-2 text-slate-100 hover:brightness-110"
                     >
                         <Bell size={20} weight="fill"/>
                     </Link>
                     <Link 
                         to="/"
-                        className="p-2 text-slate-100 hover:brightness-110"
+                        className="max-sm:sr-only not-sr-only p-2 text-slate-100 hover:brightness-110"
                     >
                         <GearSix size={20} weight="fill"/>
                     </Link>
@@ -47,11 +47,11 @@ export function Header(){
                 </div>
             </aside>
             <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-4 px-2 bg-primary flex flex-col justify-between items-center">
-                <Link to="/posts" className="w-14">
+                <Link to="/posts" className="max-sm:w-10 w-14">
                     <img src={Icone} alt="" className="w-full object-cover" />
                 </Link>
 
-                <nav className="flex flex-col gap-7">
+                <nav className="flex flex-col max-sm:gap-4 gap-7">
                     <Link to="/" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("posts") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <House size={28} weight="fill"/>
                     </Link>
@@ -67,6 +67,7 @@ export function Header(){
                     <Link to="/services" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("services") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
                         <Wrench size={28} weight="fill"/>
                     </Link>
+                    
                 </nav>
 
                 <Button onClick={logout} className="w-fit h-fit text-slate-100 p-2 bg-slate-700 rounded-lg hover:brightness-110">

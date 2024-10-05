@@ -7,7 +7,7 @@ export function LayoutHome() {
     return (
         <>
             <Outlet/>
-            <aside className="w-72 py-4 space-y-5">
+            <aside className="max-sm:sr-only max-md:sr-only not-sr-only w-72 py-4 space-y-5">
                 <div className="w-full">
                     <h5 className="px-2 py-1 w-full bg-primary rounded-lg">
                         <span className="text-base text-slate-100 font-bold">Usuário Relevantes</span>
