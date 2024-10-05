@@ -1,5 +1,5 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import bro from "../../../assets/images/bro.png";
+// import bro from "../../../assets/images/bro.png";
 import { Button } from "../../../components/button";
 import { useNavigate } from "react-router-dom";
 
@@ -33,13 +33,13 @@ export function SearchService({setStep}: SearchServiceProps) {
                     <ArrowRight size={20}/>
                 </Button>
             </div>
-            <div className="absolute max-sm:sr-only min-md:sr-only  not-sr-only w-full h-[90vh] -z-10 overflow-hidden">
+            {/* <div className="absolute max-sm:sr-only min-md:sr-only  not-sr-only w-full h-[90vh] -z-10 overflow-hidden">
                 <img 
                     src={bro} 
                     alt="" 
                     className="absolute -right-1/3 -z-10 "
                 />
-            </div>
+            </div> */}
             
             <div className='absolute w-2/5 right-0 top-0 bottom-0 bg-gradient-to-l from-slate-400/60 -z-20'/>
         </>

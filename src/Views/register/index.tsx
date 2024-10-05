@@ -12,7 +12,7 @@ export function Register() {
     const [step, setStep] = useState<Steps>('infoRegisterUser')
 
     return (
-      <div className="space-y-5">
+      <>
         <header className="w-full py-4 flex justify-start items-center">
           <img src={imagotipo} alt="logo quebra-galho" className=" max-sm:w-40 max-w-[200px]"/>
         </header>
@@ -23,7 +23,7 @@ export function Register() {
             {step === "SearchService" &&  <SearchService setStep={setStep}/>}
             {step === "FormService" &&  <FormService setStep={setStep}/>}
         </main>
-      </div>
+      </>
     )
   }
   

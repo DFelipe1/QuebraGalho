@@ -1,5 +1,5 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
-import pana from "../../../assets/images/pana.png";
+// import pana from "../../../assets/images/pana.png";
 import { Button } from "../../../components/button";
 import { Input } from "../../../components/inputs";
 import { ArrowLeft } from "@phosphor-icons/react";
@@ -43,13 +43,13 @@ export function FormService({ setStep }: FormServiceProps) {
                 </form>
                 
             </div>
-            <div className="absolute w-full h-[90vh] -z-10 overflow-hidden">
+            {/* <div className="absolute w-full h-[90vh] -z-10 overflow-hidden">
                 <img 
                     src={pana} 
                     alt="" 
                     className="absolute -left-1/3 -z-10 "
                 />
-            </div>
+            </div> */}
             
             <div className='absolute w-2/5 left-0 top-0 bottom-0 bg-gradient-to-r from-secondary-400/60 -z-20'/>
         </>

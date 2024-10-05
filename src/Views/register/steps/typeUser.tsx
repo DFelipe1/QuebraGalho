@@ -1,5 +1,5 @@
-import pana from "../../../assets/images/pana.png";
-import bro from "../../../assets/images/bro.png";
+// import pana from "../../../assets/images/pana.png";
+// import bro from "../../../assets/images/bro.png";
 import { Button } from "../../../components/button";
 
 interface TypeUserProps {
@@ -21,18 +21,18 @@ export function TypeUser({setStep}: TypeUserProps) {
                     </Button>
                 </div>
             </div>
-            <div className="absolute max-sm:sr-only not-sr-only w-full h-[90vh] -z-10 overflow-hidden">
+            {/* <div className="absolute inset-0 max-sm:sr-only  not-sr-only w-full h-[90vh] -z-10 overflow-hidden">
                 <img 
                     src={bro} 
                     alt="" 
-                    className="absolute -left-1/3 -z-10 "
+                    className="absolute bottom-0 -left-1/3 -z-10 "
                 />
                 <img 
                     src={pana} 
                     alt="" 
-                    className="absolute -right-1/4 -z-10 "
+                    className="absolute bottom-0 -right-1/4 -z-10 "
                 />
-            </div>
+            </div> */}
             
             <div className='absolute w-2/5 left-0 top-0 bottom-0 bg-gradient-to-r from-slate-400/60 -z-20'/>
             <div className='absolute w-2/5 right-0 top-0 bottom-0 bg-gradient-to-l from-secondary-400/60 -z-20'/>
