@@ -47,9 +47,9 @@ export function Header(){
                 </div>
             </aside>
             <aside className="fixed top-0 left-0 bottom-0 w-fit h-full py-4 px-2 bg-primary flex flex-col justify-between items-center">
-                <div className="w-14">
+                <Link to="/posts" className="w-14">
                     <img src={Icone} alt="" className="w-full object-cover" />
-                </div>
+                </Link>
 
                 <nav className="flex flex-col gap-7">
                     <Link to="/" className={`w-fit h-fit text-slate-100 p-2 rounded-full ${currentUrl.includes("posts") && 'bg-secondary-300 border border-secondary-300'} hover:brightness-110`}>
