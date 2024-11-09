@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Button } from "../../components/button";
 import * as Dialog from '@radix-ui/react-dialog';
-import { X } from "@phosphor-icons/react";
+import { PencilSimple, X } from "@phosphor-icons/react";
 import { Input } from "../../components/inputs";
 import { FormEvent, useState } from "react";
 
@@ -62,8 +62,8 @@ export function Profile() {
                      <Dialog.Root>
                      <Dialog.Trigger>
                          <div className="w-full flex justify-center">
-                             <Button variant="secondary" size="default">
-                                 Editar perfil
+                             <Button variant="ghost" size="default">
+                                 <PencilSimple size={20} weight="fill"/>
                              </Button>
                          </div>
                      </Dialog.Trigger>
