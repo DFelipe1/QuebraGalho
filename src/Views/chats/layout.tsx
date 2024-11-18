@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { UserRecomend } from "../../components/userRecomend";
+import { UserBox } from "../../components/userBox";
 
 export function LayoutChat() {
 
@@ -13,13 +13,13 @@ export function LayoutChat() {
                     </h5>
                     <div className="w-full flex flex-col gap-3 mt-4">
                         <Link to="1">
-                            <UserRecomend/>
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
                         </Link>
                         <Link to="2">
-                            <UserRecomend/>
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
                         </Link>
                         <Link to="3">
-                            <UserRecomend/>
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
                         </Link>
                     </div>
                 </div>

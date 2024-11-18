@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { UserRelevant } from "../../components/userRelevant";
-import { UserRecomend } from "../../components/userRecomend";
+import { UserBox } from "../../components/userBox";
 
 export function LayoutHome() {
 
@@ -22,10 +22,16 @@ export function LayoutHome() {
                     <h5 className="px-2 py-1 w-full bg-primary rounded-lg">
                         <span className="text-base text-slate-100 font-bold">Recomendados</span> 
                     </h5>
-                    <div className="w-full space-y-3 mt-4">
-                        <UserRecomend/>
-                        <UserRecomend/>
-                        <UserRecomend/>
+                    <div className="w-full flex flex-col gap-3 mt-4">
+                        <Link to="/profile/username">
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
+                        </Link>
+                        <Link to="/profile/username">
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
+                        </Link>
+                        <Link to="/profile/username">
+                            <UserBox name="Mayk Britto" imageULR="http://github.com/Maykbrito.png" occupation="filmaker"/>
+                        </Link>    
                     </div>
                 </div> 
             </aside>        
