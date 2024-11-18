@@ -1,8 +1,9 @@
 import { Handshake, X } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 export function NotificationComponent() {
     return (
-        <div className="w-full px-3 py-5 rounded-lg flex gap-4 items-start bg-secondary-200">
+        <Link to="http://localhost:5173/chats/1" className="w-full px-3 py-5 rounded-lg flex gap-4 items-start bg-secondary-200">
             <div className="w-fit h-fit p-4 bg-secondary-300 text-slate-900 rounded-lg">
                 <Handshake size={48} weight="fill"/>
             </div>
@@ -13,6 +14,6 @@ export function NotificationComponent() {
             <button className="w-fit h-fit">
                 <X size={20}/>
             </button>
-        </div>
+        </Link>
     )
 }
