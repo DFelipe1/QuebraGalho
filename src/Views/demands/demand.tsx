@@ -1,8 +1,9 @@
 import { Clock } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 import { tv, VariantProps } from "tailwind-variants";
 
 interface DemandProps extends VariantProps<typeof demandVariants>, VariantProps<typeof tagVariants> {
-
+    contractURL: string
 }
 
 const demandVariants = tv({
@@ -38,9 +39,9 @@ const tagVariants = tv({
 
 })
 
-export function Demand({ variant }: DemandProps) {
+export function Demand({ contractURL ,variant }: DemandProps) {
     return (
-        <div className={demandVariants({ variant })}>
+        <Link to={contractURL} className={demandVariants({ variant })}>
             <div className="w-full flex justify-between items-center">
                 <div className="flex gap-2 items-center justify-center">
                     <div className="w-8 h-w-8 overflow-hidden rounded-full">
@@ -69,6 +70,6 @@ export function Demand({ variant }: DemandProps) {
                     28/Jun/2024
                 </span>
             </div>
-        </div>
+        </Link>
     )
 }
