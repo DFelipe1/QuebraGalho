@@ -1,14 +1,18 @@
-import { DotsThree, PaperPlaneTilt } from "@phosphor-icons/react";
-import { Button } from "../../components/button";
+import { DotsThree } from "@phosphor-icons/react";
 import { FormEvent, useState } from "react";
 import { Messages } from "../../components/messages";
+import { AnaliticService } from "./step/analiticService";
+import { NeedBudget } from "./step/needBudget";
+import { ChatStep } from "./step/chatStep";
+import { FinishBudget } from "./step/finishBudget";
+import { AcceptedBudget } from "./step/acceptedBudget";
+import { useNavigate } from "react-router-dom";
 
 export function Chat() {
 
-    const [isAnalitic, setIsAnalitic] = useState(false)
-    const [isBudget, setIsBudget] = useState(false)
-    const [isFinal, setIsFinal] = useState(false)
-    const [acceptedBudget, setAcceptedBudget] = useState(false)
+    const navigate = useNavigate()
+
+    const [steps, setSteps] = useState<Chat>('isAnalitic')
     const [messages, setMessages] = useState([
         {
             id: '1',
@@ -36,7 +40,11 @@ export function Chat() {
 
         setMessages([...messages, {id: '4', author: 'me', message: e.target.message.value}])
 
-        setIsFinal(true)
+        setSteps('isFinal')
+    }
+
+    function acceptedBudget() {
+        navigate('/contract/')
     }
 
     return (
@@ -69,83 +77,13 @@ export function Chat() {
                         ))
                     }
                 </div>
-
-                
-               
             </div>
-
-           {!isAnalitic && (
-             <div className="w-full h-fit space-y-1">
-                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
-                    Aceita analisar esse serviço?
-                </strong>
-                <form className="flex w-full gap-4">
-                    <Button onClick={() => setIsAnalitic(true)} size="full">Aceitar</Button>
-                    <Button variant="secondary" size="full">Recusar</Button>
-                </form>
-            </div>
-           )}
            
-           {isAnalitic && !isBudget && (
-             <div className="w-full h-fit space-y-1">
-                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
-                    Precisa fazer orçamento previo?
-                </strong>
-                <form className="flex w-full gap-4">
-                    <Button onClick={() => setIsBudget(true)} size="full">Sim</Button>
-                    <Button variant="secondary" size="full">Não</Button>
-                </form>
-            </div>
-           )}
-           
-           {isAnalitic && isBudget && (
-             <div className="w-full h-fit space-y-1">
-                <strong className="text-base text-slate-500 font-normal leading-relaxed">
-                    Ofereça seu preço e data da visita
-                </strong>
-                <form 
-                    onSubmit={e => handleNewMassage(e)}
-                    action=""
-                    className="w-full p-3 rounded-lg flex justify-between bg-slate-700 gap-4"
-                >
-                    <input 
-                        type="text"
-                        name="message"
-                        className="w-full bg-transparent outline-none text-slate-200 leading-normal"
-                        placeholder="Digite sua mensagem aqui"
-                    />
-                    <Button type="submit">
-                        <PaperPlaneTilt size={20} weight="fill"/>
-                    </Button>
-                </form>
-            </div>
-
-           )}
-
-           {isFinal && (
-             <div className="w-full h-fit space-y-1">
-                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
-                    Deseja finalizar orçamento?
-                </strong>
-                <form className="flex w-full gap-4">
-                    <Button onClick={() => setAcceptedBudget(true)} size="full">Sim</Button>
-                    <Button onClick={() => setIsFinal(false)} variant="secondary" size="full">Não</Button>
-                </form>
-            </div>
-           )}
-          
-           {acceptedBudget && (
-             <div className="w-full h-fit space-y-1">
-                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
-                    Aceita o orçamento?
-                </strong>
-                <form className="flex w-full gap-4">
-                    <Button onClick={() => console.log("notificação")} size="full">Sim</Button>
-                    <Button onClick={() => setAcceptedBudget(false)} variant="secondary" size="full">Não</Button>
-                </form>
-            </div>
-           )}
-
+            {steps === "isAnalitic" &&  <AnaliticService setSteps={setSteps}/>}
+            {steps === "isBudget" &&  <NeedBudget setSteps={setSteps}/>}
+            {steps === "message" &&  <ChatStep handleNewMassage={handleNewMassage}/>}
+            {steps === "isFinal" &&  <FinishBudget setSteps={setSteps}/>}
+            {steps === "acceptedBudget" &&  <AcceptedBudget acceptedBudget={acceptedBudget} setSteps={setSteps}/>}
 
         </div> 
     )

@@ -1,0 +1,1 @@
+type Chat = 'isAnalitic' | 'isBudget' | 'message' | 'isFinal' | 'acceptedBudget'
