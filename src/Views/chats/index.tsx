@@ -1,7 +1,44 @@
 import { DotsThree, PaperPlaneTilt } from "@phosphor-icons/react";
 import { Button } from "../../components/button";
+import { FormEvent, useState } from "react";
+import { Messages } from "../../components/messages";
 
 export function Chat() {
+
+    const [isAnalitic, setIsAnalitic] = useState(false)
+    const [isBudget, setIsBudget] = useState(false)
+    const [isFinal, setIsFinal] = useState(false)
+    const [acceptedBudget, setAcceptedBudget] = useState(false)
+    const [messages, setMessages] = useState([
+        {
+            id: '1',
+            author: 'to',
+            message: 'lorem ipsum'
+        },
+        {
+            id: '2',
+            author: 'to',
+            message: 'lorem ipsum'
+        },
+        {
+            id: '3',
+            author: 'me',
+            message: 'lorem ipsum'
+        },
+    ])
+
+    function handleNewMassage(e: FormEvent<HTMLFormElement>){
+        e.preventDefault()
+        
+        if(!e.target.message.value){
+            return
+        }
+
+        setMessages([...messages, {id: '4', author: 'me', message: e.target.message.value}])
+
+        setIsFinal(true)
+    }
+
     return (
         <div className="w-full h-[88vh] flex flex-col bg-slate-50 px-2 py-4 space-y-2">
             <div className="w-full top-0 p-2 flex justify-between items-center shadow-sm">
@@ -24,58 +61,91 @@ export function Chat() {
 
             <div className="flex-1 overflow-auto flex flex-col-reverse snap-y snap-mandatory">
               
-                  <div className="space-y-4 snap-end">
+                <div className="space-y-4 snap-end">
+                    {
+                        messages.map(message => (
+                            <Messages key={message.id} message={message.message} variant={message.author}/>
 
-                    <div className="w-full flex justify-start">
-                            <p className="w-4/6 px-2 py-4 text-base text-slate-900 font-normal bg-slate-300 rounded">
-                                Lorem ipsum dolor sit amet consectetur. Aenean tortor velit sit augue mauris gravida nulla. Purus phasellus dignissim nunc aliquam et. Lacus pretium adipiscing felis tincidunt ultricies semper. Vulputate curabitur bibendum nunc rhoncus non pellentesque sed. Lacus lorem morbi aliquet volutpat ut est. Purus eu vehicula nisl tellus commodo. Magna lectus id faucibus suspendisse ipsum habitant. Libero condimentum orci fusce amet elit. Euismod in congue commodo posuere venenatis neque vitae aliquam aliquet. Eget sapien orci condimentum enim iaculis ultrices sit.
-                            </p>
-                        </div>
-                        <div className="w-full flex justify-start">
-                            <p className="w-4/6 px-2 py-4 text-base text-slate-900 font-normal bg-slate-300 rounded">
-                                Lorem ipsum dolor sit amet consectetur. Aenean tortor velit sit augue mauris gravida nulla. Purus phasellus dignissim nunc aliquam et. Lacus pretium adipiscing felis tincidunt ultricies semper. Vulputate curabitur bibendum nunc rhoncus non pellentesque sed. Lacus lorem morbi aliquet volutpat ut est. Purus eu vehicula nisl tellus commodo. Magna lectus id faucibus suspendisse ipsum habitant. Libero condimentum orci fusce amet elit. Euismod in congue commodo posuere venenatis neque vitae aliquam aliquet. Eget sapien orci condimentum enim iaculis ultrices sit.
-                            </p>
-                        </div>
-                        
-                        <div className="w-full flex justify-end ">
-                            <p className="w-4/6 px-2 py-4 text-base text-slate-900 font-normal bg-secondary-300 rounded">
-                                Lorem ipsum dolor sit amet consectetur. Aenean tortor velit sit augue mauris gravida nulla. Purus phasellus dignissim nunc aliquam et. Lacus pretium adipiscing felis tincidunt ultricies semper. Vulputate curabitur bibendum nunc rhoncus non pellentesque sed. Lacus lorem morbi aliquet volutpat ut est. Purus eu vehicula nisl tellus commodo. Magna lectus id faucibus suspendisse ipsum habitant. Libero condimentum orci fusce amet elit. Euismod in congue commodo posuere venenatis neque vitae aliquam aliquet. Eget sapien orci condimentum enim iaculis ultrices sit.
-                            </p>
-                        </div>
-
-                  </div>
+                        ))
+                    }
+                </div>
 
                 
                
             </div>
 
-            {/* <div className="w-full h-fit space-y-1">
+           {!isAnalitic && (
+             <div className="w-full h-fit space-y-1">
                 <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
                     Aceita analisar esse serviço?
                 </strong>
                 <form className="flex w-full gap-4">
-                    <Button size="full">Aceitar</Button>
+                    <Button onClick={() => setIsAnalitic(true)} size="full">Aceitar</Button>
                     <Button variant="secondary" size="full">Recusar</Button>
                 </form>
-            </div> */}
-            <div className="w-full h-fit space-y-1">
+            </div>
+           )}
+           
+           {isAnalitic && !isBudget && (
+             <div className="w-full h-fit space-y-1">
+                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
+                    Precisa fazer orçamento previo?
+                </strong>
+                <form className="flex w-full gap-4">
+                    <Button onClick={() => setIsBudget(true)} size="full">Sim</Button>
+                    <Button variant="secondary" size="full">Não</Button>
+                </form>
+            </div>
+           )}
+           
+           {isAnalitic && isBudget && (
+             <div className="w-full h-fit space-y-1">
                 <strong className="text-base text-slate-500 font-normal leading-relaxed">
                     Ofereça seu preço e data da visita
                 </strong>
                 <form 
+                    onSubmit={e => handleNewMassage(e)}
                     action=""
                     className="w-full p-3 rounded-lg flex justify-between bg-slate-700 gap-4"
                 >
                     <input 
                         type="text"
+                        name="message"
                         className="w-full bg-transparent outline-none text-slate-200 leading-normal"
                         placeholder="Digite sua mensagem aqui"
                     />
-                    <Button>
+                    <Button type="submit">
                         <PaperPlaneTilt size={20} weight="fill"/>
                     </Button>
                 </form>
             </div>
+
+           )}
+
+           {isFinal && (
+             <div className="w-full h-fit space-y-1">
+                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
+                    Deseja finalizar orçamento?
+                </strong>
+                <form className="flex w-full gap-4">
+                    <Button onClick={() => setAcceptedBudget(true)} size="full">Sim</Button>
+                    <Button onClick={() => setIsFinal(false)} variant="secondary" size="full">Não</Button>
+                </form>
+            </div>
+           )}
+          
+           {acceptedBudget && (
+             <div className="w-full h-fit space-y-1">
+                <strong className="text-2xl text-slate-950 font-extrabold leading-snug">
+                    Aceita o orçamento?
+                </strong>
+                <form className="flex w-full gap-4">
+                    <Button onClick={() => console.log("notificação")} size="full">Sim</Button>
+                    <Button onClick={() => setAcceptedBudget(false)} variant="secondary" size="full">Não</Button>
+                </form>
+            </div>
+           )}
+
 
         </div> 
     )
