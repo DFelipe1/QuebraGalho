@@ -1,11 +1,12 @@
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
 import { Button } from "../../../components/button";
 import { PaperPlaneTilt } from "@phosphor-icons/react";
 
 interface ChatProps {
+    handleMessageChanged: (e: ChangeEvent<HTMLInputElement>) => void;
     handleNewMassage: (e: FormEvent<HTMLFormElement>) => void
 }
-export function ChatStep({ handleNewMassage }: ChatProps){
+export function ChatStep({ handleMessageChanged ,handleNewMassage }: ChatProps){
     return (
         <div className="w-full h-fit space-y-1">
             <strong className="text-base text-slate-500 font-normal leading-relaxed">
@@ -21,6 +22,7 @@ export function ChatStep({ handleNewMassage }: ChatProps){
                     name="message"
                     className="w-full bg-transparent outline-none text-slate-200 leading-normal"
                     placeholder="Digite sua mensagem aqui"
+                    onChange= {(e) => handleMessageChanged(e)}
                 />
                 <Button type="submit">
                     <PaperPlaneTilt size={20} weight="fill"/>

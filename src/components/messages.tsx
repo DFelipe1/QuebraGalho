@@ -13,6 +13,9 @@ const messageVariants = tv({
             me: 'bg-secondary-300'
         }
     },
+    defaultVariants: {
+        variant: 'to'
+    }
 })
 export function Messages({ message, variant }: MessagesProps){
     return (

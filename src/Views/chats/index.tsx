@@ -1,5 +1,5 @@
 import { DotsThree } from "@phosphor-icons/react";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Messages } from "../../components/messages";
 import { AnaliticService } from "./step/analiticService";
 import { NeedBudget } from "./step/needBudget";
@@ -30,17 +30,26 @@ export function Chat() {
             message: 'lorem ipsum'
         },
     ])
+    const [message, setMessage] = useState('')
 
     function handleNewMassage(e: FormEvent<HTMLFormElement>){
         e.preventDefault()
-        
-        if(!e.target.message.value){
+
+        if(message.trim() === ''){
             return
         }
+        setMessages([...messages, {id: '4', author: 'me', message: message}])
 
-        setMessages([...messages, {id: '4', author: 'me', message: e.target.message.value}])
-
+        setMessage('')
         setSteps('isFinal')
+    }
+
+    function handleMessageChanged(e: ChangeEvent<HTMLInputElement>){
+        setMessage(e.target.value)
+
+    if(e.target.value == ''){
+      return
+    }
     }
 
     function acceptedBudget() {
@@ -72,7 +81,7 @@ export function Chat() {
                 <div className="space-y-4 snap-end">
                     {
                         messages.map(message => (
-                            <Messages key={message.id} message={message.message} variant={message.author}/>
+                            <Messages key={message.id} message={message.message} variant={message.author === 'me' ? "me" : "to"}/>
 
                         ))
                     }
@@ -81,7 +90,7 @@ export function Chat() {
            
             {steps === "isAnalitic" &&  <AnaliticService setSteps={setSteps}/>}
             {steps === "isBudget" &&  <NeedBudget setSteps={setSteps}/>}
-            {steps === "message" &&  <ChatStep handleNewMassage={handleNewMassage}/>}
+            {steps === "message" &&  <ChatStep handleNewMassage={handleNewMassage} handleMessageChanged={handleMessageChanged}/>}
             {steps === "isFinal" &&  <FinishBudget setSteps={setSteps}/>}
             {steps === "acceptedBudget" &&  <AcceptedBudget acceptedBudget={acceptedBudget} setSteps={setSteps}/>}
 
