@@ -1,4 +1,4 @@
-import { Bell, Chats, GearSix, Handshake, House, MagnifyingGlass, SignOut, UserCircle, Wrench } from "@phosphor-icons/react";
+import { Bell, Chats, Handshake, House, MagnifyingGlass, SignOut, UserCircle, Wrench } from "@phosphor-icons/react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Icone from '../assets/logos/icone.svg';
@@ -36,12 +36,7 @@ export function Header(){
                     >
                         <Bell size={20} weight="fill"/>
                     </Link>
-                    <Link 
-                        to="/"
-                        className="max-sm:sr-only not-sr-only p-2 text-slate-100 hover:brightness-110"
-                    >
-                        <GearSix size={20} weight="fill"/>
-                    </Link>
+
                     <Link to="profile/david-felipe">
                         <UserAvatar imgAvatar="https://github.com/DFelipe1.png" name="David Felipe" userName="david-felipe"/>
                     </Link>
