@@ -56,7 +56,9 @@ export function Demand({ contractURL ,variant }: DemandProps) {
                     </span>
                 </div>
                 <span className={tagVariants({ variant })}>
-                    Concluido
+                    {variant === 'success' || variant === undefined && 'Concluido'}
+                    {variant === 'process' && 'Em andamento'}
+                    {variant === 'danger' && 'Cancelado'}
                 </span>
             </div>
 

@@ -56,7 +56,9 @@ export function Service({ variant, contractURL }: ServicesProps) {
                     </span>
                 </div>
                 <span className={tagVariants({ variant })}>
-                    Concluido
+                    {variant === 'success' || variant === undefined && 'Concluido'}
+                    {variant === 'process' && 'Em andamento'}
+                    {variant === 'danger' && 'Cancelado'}
                 </span>
             </div>
 
