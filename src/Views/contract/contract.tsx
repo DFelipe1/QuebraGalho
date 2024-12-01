@@ -1,13 +1,71 @@
-import { Check, X } from "@phosphor-icons/react";
+import { Check, CheckCircle, DotsThreeOutlineVertical, X, XCircle } from "@phosphor-icons/react";
 import { Button } from "../../components/button";
+import * as Popover from "@radix-ui/react-popover";
 import { useState } from "react";
 
 export function Contract() {
     
     const [isConfirmContract, setIsConfirmContract] = useState<boolean | undefined>(undefined)
+    const [isJobStatus, setIsJobStatus] = useState<"done" | "canceled" | "process">('process')
 
     return (
-        <div className="w-full max-w-2xl space-y-4">
+        <div className="w-full max-w-2xl space-y-4 relative">
+            <div className="absolute right-0 top-1">
+                {
+                    isJobStatus == 'process' && (
+                        <Popover.Root>
+                        <Popover.Trigger>
+                            <Button variant="ghost">
+                                <DotsThreeOutlineVertical size={20} weight="fill"/>
+                            </Button>
+                        </Popover.Trigger>
+                        <Popover.Portal>
+                            <Popover.Content
+                                className="w-[260px] rounded bg-white p-5 space-y-3"
+                                sideOffset={5}
+                            >
+                                <Button 
+                                    variant="ghost" 
+                                    className="w-full rounded-lg flex gap-2 items-center p-4 font-bold text-success hover:bg-success-light/40"
+                                    onClick={() => setIsJobStatus('done')}
+                                >
+                                    <CheckCircle size={20} weight="bold"/>
+                                    Tabalho Feito
+                                </Button>
+                                <div className="w-full h-0.5 bg-slate-100"/>
+                                <Button 
+                                    variant="ghost" 
+                                    className="w-full rounded-lg flex gap-2 items-center p-4 font-bold text-danger hover:bg-danger-light/40"
+                                    onClick={() => setIsJobStatus('canceled')}    
+                                >
+                                    <XCircle size={20} weight="bold"/>
+                                    Cancelar Trabalho
+                                </Button>
+                            </Popover.Content>
+                        </Popover.Portal>
+                        </Popover.Root>
+                    )
+                }
+
+                { isJobStatus == 'canceled' && (
+                     <div 
+                        className="w-full rounded-lg flex gap-2 items-center p-4 font-bold text-danger bg-danger-light/40"  
+                    >
+                        <XCircle size={20} weight="bold"/>
+                        Trabalho cancelado
+                    </div>
+                )}
+
+                { isJobStatus == 'done' && (
+                     <div 
+                          className="w-full rounded-lg flex gap-2 items-center p-4 font-bold text-success bg-success-light/40"
+                    >
+                        <CheckCircle size={20} weight="bold"/>
+                        Tabalho Concluido
+                    </div>
+                )}
+               
+            </div>
             <h1 className="w-full text-center text-2xl font-extrabold text-slate-950 leading-none">Contrato</h1>
             <div className="space-y-2">
                 <h3 className="text-xl text-slate-900 font-extrabold leading-snug">Termos:</h3>
