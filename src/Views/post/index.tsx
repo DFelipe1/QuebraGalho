@@ -52,7 +52,7 @@ export function Post() {
                     <Dialog.Trigger>
                         <div className="w-full flex justify-center">
                             <Button size="default">
-                                Contratar
+                                Negociar
                             </Button>
                         </div>
                     </Dialog.Trigger>
