@@ -38,8 +38,8 @@ export function FormContract() {
                 />
             </div>
             <div className="w-full flex gap-3">
-                <Input label="Prazo:*" name="Term" required/>
-                <Input label="Valor:*" name="Amount" required/>
+                <Input label="Prazo:*" name="Term" type="datetime-local" required/>
+                <Input label="Valor:*" name="Amount" type="number" required/>
             </div>
             <Button size="full">
                 Assinar
